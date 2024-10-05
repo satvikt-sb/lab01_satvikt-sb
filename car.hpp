@@ -4,7 +4,7 @@
 #include "perf.hpp"
 #include "doors.hpp"
 
-class Car{
+class Car {
     private:
         char* manufacturer;
         char* model;
@@ -31,4 +31,4 @@ class Car{
         void reexamineDoors(DoorKind newDoorKind);
 };
 
-#endif //CAR_HPP
+#endif // CAR_HPP

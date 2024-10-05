@@ -3,6 +3,11 @@
 
 #include <cstdint>
 
-enum DoorKind : uint8_t { None = 0, Hinge, GullWing, Sliding };
+enum DoorKind : uint8_t {
+    None = 0,
+    Hinge,
+    GullWing,
+    Sliding
+};
 
-#endif //DOORS_HPP
+#endif // DOORS_HPP
