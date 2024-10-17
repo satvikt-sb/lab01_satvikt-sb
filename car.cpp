@@ -78,9 +78,8 @@ char const* Car::getModel() const {
     return model;
 }
 
-///
-inline PerformanceStats Car::getStats() const {
-    return {horsepower, zeroToSixtyNs, headonDragCoeff};
+PerformanceStats Car::getStats() const {
+    return PerformanceStats(horsepower, zeroToSixtyNs, headonDragCoeff);
 }
 
 uint8_t Car::getSeatCount() const {
