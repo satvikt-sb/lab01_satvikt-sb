@@ -66,7 +66,7 @@ Car& Car::operator=(Car const& o) {
         seatCount = o.seatCount;
         backseatDoors = o.backseatDoors;
     }
-    
+
     return *this;
 }
 
@@ -79,12 +79,8 @@ char const* Car::getModel() const {
 }
 
 ///
-PerformanceStats Car::getStats() const {
-    PerformanceStats stats;
-    stats.horsepower = horsepower;
-    stats.zeroToSixtyNs = zeroToSixtyNs;
-    stats.headonDragCoeff = headonDragCoeff;
-    return stats;
+inline PerformanceStats Car::getStats() const {
+    return {horsepower, zeroToSixtyNs, headonDragCoeff};
 }
 
 uint8_t Car::getSeatCount() const {
