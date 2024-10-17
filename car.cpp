@@ -5,6 +5,7 @@
 #include <cstddef>
 #include <cstring>
 // #include .......
+using namespace std;
 
 Car::Car() {
     manufacturer = nullptr;
@@ -51,11 +52,9 @@ Car::~Car() {
 
 Car& Car::operator=(const Car& o) {
     if (this != &o) {
-        // Free existing memory
         delete[] manufacturer;
         delete[] model;
 
-        // Allocate and copy new memory
         manufacturer = new char[strlen(o.manufacturer) + 1];
         strcpy(manufacturer, o.manufacturer);
 
@@ -80,6 +79,13 @@ char const* Car::getModel() const {
 }
 
 ///
+PerformanceStats Car::getStats() const {
+    PerformanceStats stats;
+    stats.horsepower = horsepower;
+    stats.zeroToSixtyNs = zeroToSixtyNs;
+    stats.headonDragCoeff = headonDragCoeff;
+    return stats;
+}
 
 uint8_t Car::getSeatCount() const {
     return seatCount;
