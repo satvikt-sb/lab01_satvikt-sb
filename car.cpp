@@ -4,7 +4,7 @@
 #include "car.hpp"
 #include <cstddef>
 #include <cstring>
-// #include .......
+#include <iostream>
 using namespace std;
 
 Car::Car() {
@@ -116,3 +116,4 @@ void Car::recountSeats(uint8_t newSeatCount) {
 void Car::reexamineDoors(DoorKind newDoorKind) {
     backseatDoors = newDoorKind;
 }
+
