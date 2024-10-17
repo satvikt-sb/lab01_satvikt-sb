@@ -31,7 +31,7 @@ Car::Car(char const* const manufacturerName, char const* const modelName, Perfor
     backseatDoors = backseatDoorDesign;
 }
 
-Car::Car(const Car& o) {
+Car::Car(Car const& o) {
     manufacturer = new char[strlen(o.manufacturer) + 1];
     strcpy(manufacturer, o.manufacturer);
     
@@ -50,14 +50,13 @@ Car::~Car() {
     delete[] model;
 }
 
-Car& Car::operator=(const Car& o) {
+Car& Car::operator=(Car const& o) {
     if (this != &o) {
         delete[] manufacturer;
-        delete[] model;
-
         manufacturer = new char[strlen(o.manufacturer) + 1];
         strcpy(manufacturer, o.manufacturer);
 
+        delete[] model;
         model = new char[strlen(o.model) + 1];
         strcpy(model, o.model);
 
@@ -67,6 +66,7 @@ Car& Car::operator=(const Car& o) {
         seatCount = o.seatCount;
         backseatDoors = o.backseatDoors;
     }
+    
     return *this;
 }
 
